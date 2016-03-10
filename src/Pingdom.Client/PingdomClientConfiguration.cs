@@ -23,6 +23,18 @@
             Password = GetConfigurationKey("Password");
             AccountEmail = GetConfigurationKey("AccountEmail");
         }
+        
+        public PingdomClientConfiguration(string appKey, string baseAddress, string userName, string password)
+            :this(appKey, baseAddress, userName, password, null) { }
+        
+        public PingdomClientConfiguration(string appKey, string baseAddress, string userName, string password, string accountEmail)
+        {
+            AppKey = appKey;
+            BaseAddress = baseAddress;
+            UserName = userName;
+            Password = password;
+            AccountEmail = accountEmail;
+        }
 
         private static string GetConfigurationKey(string key)
         {
